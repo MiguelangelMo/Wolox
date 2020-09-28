@@ -108,7 +108,7 @@ nav div {
 }
 
 .space-col {
-    flex-shrink: 3;
+    flex-shrink: 3 !important;
 }
 
 .space-button {
@@ -328,7 +328,11 @@ nav div {
     align-items: flex-end !important;
 }
 
-.img-pie{
+.img-pie {
+    width: 30%;
+}
+
+.style-img-login {
     width: 30%;
 }
 
@@ -347,6 +351,101 @@ hr {
         object-fit: cover;
         object-position: center center;
     }
+}
+
+/***************************************************/
+/************************FORM***********************/
+/***************************************************/
+
+.reset-form {
+    margin-bottom: 1rem;
+}
+
+.check {
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.25rem;
+}
+
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+}
+
+.form-input-reset {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.label {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    margin-bottom: .5em;
+}
+
+.form-check>label {
+    font-size: 16px;
+}
+
+.btn-style {
+    color: #17a2b8 !important;
+    border: 1px solid #17a2b8;
+    border-radius: .5rem;
+    padding-left: 4em;
+    padding-right: 4em;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.container-form {
+    width: 100%;
+    height: 500px;
+}
+
+.card-form {
+    width: 50%;
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding: 1em;
+    -webkit-box-shadow: 0px 11px 14px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 11px 14px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 11px 14px 3px rgba(0, 0, 0, 0.75);
+}
+
+.label-password{
+    font-size: 12px;
+    font-family: 'Montserrat';
+}
+
+.error-input{
+    border-color: red;
+}
+
+.success-input{
+    border-color: #7CD10F;
 }
 
 /***************************************************/
@@ -409,6 +508,7 @@ hr {
     padding-left: 4em;
     padding-right: 4em;
     font-size: .8rem;
+    cursor: pointer;
 }
 
 .btn-complejo:focus {
@@ -427,7 +527,7 @@ hr {
     border-color: #FFF;
 }
 
-.conocer>a:hover{
+.conocer>a:hover {
     color: #17a2b8 !important;
     background-color: #FFF;
     border-color: #FFF;
@@ -441,6 +541,13 @@ hr {
 .conocer>a {
     background-color: #17a2b8;
     color: white;
+}
+
+.btn-style:hover {
+    color: #FFF !important;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
 }
 
 /***************************************************/
@@ -485,6 +592,14 @@ hr {
     .conocer>p:nth-child(1),
     .conocer>p:nth-child(2) {
         font-size: 24px;
+    }
+
+    .card-form {
+        width: 80%;
+    }
+
+    .style-img-login{
+        width: 60%;
     }
 }
 

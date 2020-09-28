@@ -1,14 +1,35 @@
+import {
+    LOGIN,
+    CLOSESESSION,
+    LIST,
+} from '../type';
+
 const initialState = {
-    item: [
-        {
-            id: 1,
-            name: 'name',
-        },
-    ],
+    token: localStorage.getItem('token'),
+    session: localStorage.getItem('session'),
+    item: [],
 };
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'GET':
+        case LOGIN:
+            if (action.payload.checkbox) {
+                localStorage.setItem("session", action.payload.checkbox);
+                localStorage.setItem("token", action.payload.token.token);
+            }
+            return {
+                ...state,
+                token: action.payload.token.token,
+                session: action.payload.checkbox,
+            };
+        case CLOSESESSION:
+            localStorage.removeItem("session");
+            localStorage.removeItem("token");
+            return {
+                ...state,
+                token: null,
+                session: null,
+            };
+        case LIST:
 
         default:
             return state;

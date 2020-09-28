@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Nav = () => {
+    const token = useSelector((state) => state.items.token);
     const btnSimple = "btn btn-simple";
     const btnComplejo = "btn btn-complejo";
-    // const display_none = "d-none";
+    const dnone = 'd-none';
+
     const buttons = [
         {
             title: 'Inicio',
@@ -30,9 +33,9 @@ const Nav = () => {
             id: 4,
         },
         {
-            title: 'Login',
-            style: btnComplejo,
-            link: '#',
+            title: typeof (token) === 'undefined' || !token ? 'Login' : 'Salir',
+            style: typeof (token) === 'undefined' || !token ? btnComplejo : dnone,
+            link: '/login',
             id: 5,
         },
     ];
