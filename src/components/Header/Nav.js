@@ -17,7 +17,7 @@ const Nav = () => {
         {
             title: 'Tecnologías',
             style: btnSimple,
-            link: '#tecnology',
+            link: /*'#tecnology'*/ '/',
             id: 2,
         },
         {
