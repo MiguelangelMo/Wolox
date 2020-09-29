@@ -2,8 +2,10 @@ import axios from 'axios';
 import {
     LOGIN,
     CLOSESESSION,
-    LIST,
+    KEYWORD,
 } from '../type';
+import queryAPI from '../util/queryAPI';
+import orderApi from '../util/orderApi';
 
 export const Login = (data, checkbox) => {
     return async (dispatch) => {
@@ -27,12 +29,14 @@ export const closeSesion = () => {
     };
 };
 
-export const List = () => {
+export const keywordSearch = (word, num) => {
     return async (dispatch) => {
-        const api = await axios.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs');
+        const api = await axios.get('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs');
+        const queryApi = queryAPI(api.data, word);
+        const order = orderApi(queryApi, num);
         dispatch({
-            type: LIST,
-            payload: api.data,
+            type: KEYWORD,
+            payload: num === 1 || num === 2 ? order : queryApi,
         });
     };
 };

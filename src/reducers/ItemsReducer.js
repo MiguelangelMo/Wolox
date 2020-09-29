@@ -1,7 +1,7 @@
 import {
     LOGIN,
     CLOSESESSION,
-    LIST,
+    KEYWORD,
 } from '../type';
 
 const initialState = {
@@ -29,8 +29,11 @@ export default (state = initialState, action) => {
                 token: null,
                 session: null,
             };
-        case LIST:
-
+        case KEYWORD:
+            return {
+                ...state,
+                item: action.payload,
+            };
         default:
             return state;
     }

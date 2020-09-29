@@ -333,6 +333,12 @@ nav div {
 }
 
 .style-img-login {
+    margin-left: 1em;
+    width: 100%;
+    height: auto;
+}
+
+.style-img-login img {
     width: 30%;
 }
 
@@ -343,6 +349,72 @@ hr {
     -webkit-box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.flex-start-y-spacex>ul {
+    margin-right: .5em;
+}
+
+.flex-start-y-spacex>ul>h4 {
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.flex-start-y-spacex>ul>li>span {
+    margin: .5em auto;
+    font-family: 'Montserrat';
+    text-align: justify;
+}
+
+.list-img {
+    width: 100px;
+}
+
+.flex-start-y-spacex ul li a {
+    text-align: center;
+}
+
+.flex-start-y-spacex ul li img {
+    margin-top: .1em;
+    width: 30% !important;
+}
+
+.table-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.filtros {
+    margin-top: 2em;
+    width: 100%;
+    margin-left: .5em;
+    flex-shrink: 4;
+}
+
+.filtros input {
+    margin-left: .2em;
+}
+
+.filtros h2,
+.filtros h3 {
+    text-align: center;
+    font-family: 'Montserrat';
+    margin-bottom: .5em;
+}
+
+.flex-start-y-spacex {
+    margin-top: 2em;
+    align-items: flex-start !important;
+    justify-content: space-evenly !important;
+}
+
+cite {
+    width: 100%;
+    display: block !important;
+    text-align: center;
 }
 
 @supports(object-fit: cover) {
@@ -435,16 +507,16 @@ hr {
     box-shadow: 0px 11px 14px 3px rgba(0, 0, 0, 0.75);
 }
 
-.label-password{
+.label-password {
     font-size: 12px;
     font-family: 'Montserrat';
 }
 
-.error-input{
+.error-input {
     border-color: red;
 }
 
-.success-input{
+.success-input {
     border-color: #7CD10F;
 }
 
@@ -553,6 +625,75 @@ hr {
 /***************************************************/
 /*********************MEDIA*************************/
 /***************************************************/
+@media screen and (max-width:1057px) {
+    .render-start {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filtros{
+        
+    }
+
+    .row-content-second {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:844px) {
+    .flex-start-y-spacex ul {
+        width: 100%;
+        border: 1px solid;
+        margin: 0 !important;
+    }
+
+    .flex-start-y-spacex ul h4 {
+        display: none;
+    }
+
+    .table-column {
+        align-content: stretch !important;
+        justify-content: baseline !important;
+        flex-direction: row;
+        text-align: justify;
+    }
+
+    .table-column::before {
+        height: 60px !important;
+        width: 220px !important;
+        padding: auto 1em;
+        margin-right: 2em;
+        font-weight: bold;
+        font-family: 'Montserrat';
+    }
+
+    .label-1::before{
+        content: 'Tecnologías';
+    }
+    .label-2::before{
+        content: 'Lenguajes';
+    }
+    .label-3::before{
+        content: 'Tipos';
+    }
+    .label-4::before{
+        content: 'Licencias';
+    }
+    .label-5::before{
+        content: 'Autores';
+    }
+    .label-6::before{
+        content: 'Año';
+    }
+    .label-7::before{
+        content: 'Imagen';
+    }
+
+    .table-column span {
+        width: 100%;
+        padding-right: .5em;
+    }
+}
 
 @media screen and (max-width:750px) {
 
@@ -598,8 +739,8 @@ hr {
         width: 80%;
     }
 
-    .style-img-login{
-        width: 60%;
+    .style-img-login {
+        width: 100%;
     }
 }
 

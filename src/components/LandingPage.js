@@ -6,7 +6,7 @@ const ContentSecond = React.lazy(() => import('./contentSecond/Content'));
 const ContentThird = React.lazy(() => import('./contentThird/Content'));
 const ContentQuarter = React.lazy(() => import('./contentQuarter/Content'));
 const ContentFifth = React.lazy(() => import('./contentFifth/Content'));
-const ContentSect = React.lazy(() => import('./contentSect/Content'));
+const Footer = React.lazy(() => import('./Footer/Content'));
 
 const LandingPage = () => {
     return (
@@ -17,7 +17,7 @@ const LandingPage = () => {
             <ContentThird />
             <ContentQuarter />
             <ContentFifth />
-            <ContentSect />
+            <Footer />
         </Suspense>
     );
 };
