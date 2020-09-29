@@ -2,6 +2,7 @@ import {
     LOGIN,
     CLOSESESSION,
     KEYWORD,
+    TEST_LOCAL,
 } from '../type';
 
 const initialState = {
@@ -34,6 +35,11 @@ export default (state = initialState, action) => {
                 ...state,
                 item: action.payload,
             };
+        case TEST_LOCAL:
+            return {
+                ...state,
+                data: action.data
+            }
         default:
             return state;
     }
