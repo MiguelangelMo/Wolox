@@ -10,12 +10,10 @@ img {
 }
 
 @font-face {
-    font-family: "MontSerrat";
-    src: url('./font/Montserrat-Black.ttf'),
-        url('./font/Montserrat-Bold.ttf'),
-        url('./font/Montserrat-Regular.ttf'),
-        url('./font/Montserrat-SemiBold.ttf'),
-        url('./font/Montserrat-ExtraBold.ttf'),
+    font-family: "Montserrat";
+    src: url('./font/Montserrat-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /****************************************************/
