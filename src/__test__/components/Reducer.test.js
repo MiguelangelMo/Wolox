@@ -8,7 +8,7 @@ describe('dataReducer', () => {
     it('receives dataReducer', () => {
         expect(dataReducer({}, {
             type: 'TEST_LOCAL',
-            data: 'MIguelangel Molero',
-        })).toEqual({ data: "MIguelangel Molero" });
+            data: 'Miguelangel Molero',
+        })).toEqual({ data: "Miguelangel Molero" });
     });
 });

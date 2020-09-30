@@ -10,13 +10,13 @@ const mockStore = configureStore(middlewares);
 /*eslint no-undef: "error"*/
 function success() {
     return {
-        type: 'SEND_DATA',
+        type: 'LOGIN',
     };
 }
 
 function fetchData(data) {
-    return (dispatch) => {
-        return axios.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login', data).then(() => dispatch(success()));
+    return async (dispatch) => {
+        return await axios.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login', data).then(() => dispatch(success()));
     };
 }
 
@@ -27,6 +27,7 @@ it('should execute fetch data', () => {
     return store.dispatch(fetchData({ email: 'user@wolox.com.ar', password: '12345678' }))
         .then(() => {
             const actions = store.getActions();
+            console.log(actions[0])
             expect(actions[0]).toEqual(success());
         });
 });

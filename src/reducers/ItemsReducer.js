@@ -11,6 +11,7 @@ const initialState = {
     session: localStorage.getItem('session'),
     item: [],
     lenguage: false,
+    data: null,
 };
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -38,6 +39,7 @@ export default (state = initialState, action) => {
                 item: action.payload,
             };
         case TEST_LOCAL:
+            // console.log(action.data)
             return {
                 ...state,
                 data: action.data
