@@ -1,16 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ContentText = () => {
+    const { t } = useTranslation();
     return (
         <article className="article">
             <p className="text-content-primary">
-                Estamos buscando
+                {t('content.thir.search')}
                 <br />
-                para incorporar gente
+                {t('content.thir.people')}
                 <br />
-                increible para estas
+                {t('content.thir.increi')}
                 <br />
-                tecnologías:
+                {t('content.thir.tech')}:
             </p>
         </article>
     );

@@ -622,6 +622,29 @@ cite {
     box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
 }
 
+.btn-empty {
+    display: inline;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: #000088;
+    font-family: arial, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    position: absolute;
+    top: 1em;
+    right: 7em;
+    font-family: 'Montserrat';
+    font-family: 14px;
+}
+
+.btn-empty:hover {
+    text-decoration: none;
+    color: #0000cc;
+    cursor: pointer;
+}
+
 /***************************************************/
 /*********************MEDIA*************************/
 /***************************************************/
@@ -631,7 +654,7 @@ cite {
         align-items: center;
     }
 
-    .filtros{
+    .filtros {
         margin-top: 10em !important;
     }
 
@@ -667,25 +690,31 @@ cite {
         font-family: 'Montserrat';
     }
 
-    .label-1::before{
+    .label-1::before {
         content: 'Tecnologías';
     }
-    .label-2::before{
+
+    .label-2::before {
         content: 'Lenguajes';
     }
-    .label-3::before{
+
+    .label-3::before {
         content: 'Tipos';
     }
-    .label-4::before{
+
+    .label-4::before {
         content: 'Licencias';
     }
-    .label-5::before{
+
+    .label-5::before {
         content: 'Autores';
     }
-    .label-6::before{
+
+    .label-6::before {
         content: 'Año';
     }
-    .label-7::before{
+
+    .label-7::before {
         content: 'Imagen';
     }
 

@@ -1,21 +1,23 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Footer from '../../img/Ic_Wolox_Footer.png';
 import { siteo } from '../../util/addresses';
 
 const ContentImg = () => {
+    const { t } = useTranslation();
     return (
         <div className="footer">
             <div className="conocer">
                 <p>
-                    Gracias por
-                    <span className="carita-picara">completar el ejercicio</span>
+                    {t('content.one.than')}
+                    <span className="carita-picara">{t('content.one.completed')}</span>
                 </p>
                 <p>
-                    Te invitamos a ver mas información
+                    {t('content.one.info')}
                 </p>
                 <br />
                 <a className="btn btn-complejo" href={siteo}>
-                    Conocer más
+                    {t('content.one.know')}
                 </a>
             </div>
             <div className="pie">

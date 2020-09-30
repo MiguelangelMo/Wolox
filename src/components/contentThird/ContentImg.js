@@ -1,8 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Twitter from '../../img/image.png';
 import { twitter } from '../../util/addresses';
 
 const ContentImg = () => {
+    const { t } = useTranslation();
     return (
         <div className="loop">
             <p className="article">
@@ -14,7 +16,7 @@ const ContentImg = () => {
                 <span>@Wolox</span>
             </div>
             <div>
-                <a href={twitter} className="btn btn-complejo"> Siguenos </a>
+                <a href={twitter} className="btn btn-complejo"> {t('content.sec.follow')} </a>
             </div>
         </div>
     );

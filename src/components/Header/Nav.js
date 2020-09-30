@@ -1,52 +1,70 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
+import { changeLenguage } from '../../actions/authActions';
 
 const Nav = () => {
+    const dispatch = useDispatch();
     const token = useSelector((state) => state.items.token);
+    const lng = useSelector((state) => state.items.lenguage);
+    const [lenguage, setLenguage] = useState(false);
+    const { t, i18n } = useTranslation();
     const btnSimple = "btn btn-simple";
     const btnComplejo = "btn btn-complejo";
     const dnone = 'd-none';
 
+    useEffect(() => {
+        dispatch(changeLenguage(lenguage));
+        if (lng) {
+            i18n.changeLanguage('en');
+        } else {
+            i18n.changeLanguage('es');
+        }
+    }, [lenguage]);
+
     const buttons = [
         {
-            title: 'Inicio',
             style: btnSimple,
             link: '/',
             id: 1,
+            translator: 'nav.start',
         },
         {
-            title: 'Tecnologías',
             style: btnSimple,
             link: '#tecnology',
             id: 2,
+            translator: 'nav.tech',
         },
         {
-            title: 'Beneficios',
             style: btnSimple,
             link: '#benefits',
             id: 3,
+            translator: 'nav.bene',
         },
         {
-            title: 'Requerimientos',
             style: btnSimple,
             link: '#requirements',
             id: 4,
-        },
-        {
-            title: typeof (token) === 'undefined' || !token ? 'Login' : 'Salir',
-            style: typeof (token) === 'undefined' || !token ? btnComplejo : dnone,
-            link: '/login',
-            id: 5,
+            translator: 'nav.requ',
         },
     ];
 
     return (
         <div className="space-button" data-animation="center">
+            <button className="btn btn-empty" type="button" onClick={() => setLenguage(!lenguage)}>
+                {t('nav.global.language')}
+            </button>
             {buttons.map((btn) => (
                 <a href={btn.link} alt={btn.title} key={btn.id} className={btn.style}>
-                    {btn.title}
+                    {t(btn.translator)}
                 </a>
             ))}
+            <Link className={btnComplejo} to={typeof (token) === 'undefined' || !token ? '/login' : '/'}>
+                {typeof (token) === 'undefined' || !token
+                    ? t('nav.login')
+                    : t('nav.tools')}
+            </Link>
         </div>
     );
 };

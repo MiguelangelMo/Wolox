@@ -3,6 +3,7 @@ import {
     LOGIN,
     CLOSESESSION,
     KEYWORD,
+    CHANGE_LANGUAGE,
 } from '../type';
 import queryAPI from '../util/queryAPI';
 import orderApi from '../util/orderApi';
@@ -37,6 +38,15 @@ export const keywordSearch = (word, num) => {
         dispatch({
             type: KEYWORD,
             payload: num === 1 || num === 2 ? order : queryApi,
+        });
+    };
+};
+
+export const changeLenguage = (status) => {
+    return (dispatch) => {
+        dispatch({
+            type: CHANGE_LANGUAGE,
+            payload: status,
         });
     };
 };

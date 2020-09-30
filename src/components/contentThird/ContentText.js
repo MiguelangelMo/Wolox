@@ -1,18 +1,20 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ContentText = () => {
+    const { t } = useTranslation();
     return (
         <article className="article f-shrink">
             <p className="text-content-primary">
-                Trabajamos para
+                {t('content.sec.work')}
                 <br />
-                <span className="text-primary-span4">convertir</span>
+                <span className="text-primary-span4">{t('content.sec.conv')}</span>
                 &nbsp;
-                <span className="text-primary-span3">ideas</span>
+                <span className="text-primary-span3">{t('content.sec.idea')}</span>
                 &nbsp;
-                en
+                {t('content.sec.in')}
                 <br />
-                productos.
+                {t('content.sec.produc')}.
             </p>
         </article>
     );

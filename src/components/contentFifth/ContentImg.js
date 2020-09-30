@@ -1,27 +1,29 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ContentImg = () => {
+    const { t } = useTranslation();
     const list = [
         {
             id: 1,
-            title: 'Estudios avanzados o recibidos de carreras del rubro informático, sistemas o electrónicos',
+            title: 'content.six.avaz',
             style: 'list list-icono1',
         },
         {
             id: 2,
-            title: 'Inglés intermedio/avanzado',
+            title: 'content.six.ia',
             style: 'list list-icono2',
         },
         {
             id: 3,
-            title: 'Conocimientos en metodologías ágiles (deseable)',
+            title: 'content.six.metho',
             style: 'list list-icono3',
         },
     ];
     return (
         <ul className="render-start">
             {list.map((list) => (
-                <li key={list.id} className={list.style}>{list.title}</li>
+                <li key={list.id} className={list.style}>{t(list.title)}</li>
             ))}
         </ul>
     );

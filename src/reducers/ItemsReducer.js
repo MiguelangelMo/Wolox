@@ -3,12 +3,14 @@ import {
     CLOSESESSION,
     KEYWORD,
     TEST_LOCAL,
+    CHANGE_LANGUAGE,
 } from '../type';
 
 const initialState = {
     token: localStorage.getItem('token'),
     session: localStorage.getItem('session'),
     item: [],
+    lenguage: false,
 };
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -39,6 +41,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 data: action.data
+            }
+        case CHANGE_LANGUAGE:
+            return {
+                ...state,
+                lenguage: action.payload
             }
         default:
             return state;
