@@ -775,6 +775,11 @@ cite {
     .style-img-login {
         width: 100%;
     }
+    
+    .filtros{
+        justify-content: flex-start !important;
+        align-items: flex-start;
+    }
 }
 
 @media screen and (max-width:570px) {
